@@ -18,6 +18,9 @@ so it survives across sessions); it is never hand-edited -- only through transac
   emergency/bike/house plans, investment structure, 2027-2036 forecast, salary/house-price/loan
   scenarios, job-loss stress tests, one-page action plan). Re-run after changing `assumptions.json`.
 - `cli.py` -- interactive transaction engine.
+- `discord_bot.py` -- optional Discord front-end so you can log transactions (e.g.
+  `200 - food`) by typing in a chat instead of running `cli.py` yourself. See
+  `DISCORD_SETUP.md` for how to create the bot and keep it running 24/7.
 
 ## Usage
 
