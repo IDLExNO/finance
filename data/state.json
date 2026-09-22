@@ -1,0 +1,30 @@
+{
+  "as_of": "2026-09-22",
+  "buckets": {
+    "emergency": 0.0,
+    "bike": 0.0,
+    "house": 0.0,
+    "long_term_wealth": 0.0,
+    "retirement_voluntary": 0.0,
+    "car": 0.0,
+    "marriage": 0.0,
+    "other": 0.0
+  },
+  "epf_balance": 0.0,
+  "debts": [],
+  "take_home": 89000,
+  "epf_employee_monthly": 6000,
+  "expenses": {
+    "family_support": 50000,
+    "medical": 20000,
+    "personal": 10000
+  },
+  "phase_switched": false,
+  "bike": {
+    "target": 350000,
+    "done": false,
+    "deadline": "2028-09-22",
+    "redirect_amount": 0.0
+  },
+  "transactions": []
+}
