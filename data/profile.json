@@ -1,0 +1,62 @@
+{
+  "_type": "USER_DATA",
+  "as_of": "2026-09-22",
+  "personal": {
+    "age": 22,
+    "city": "Chennai, Tamil Nadu",
+    "company": "Varonis",
+    "role": "MDR Analyst",
+    "experience_months": 6,
+    "career_goal": "CIO"
+  },
+  "income": {
+    "ctc_annual": 1100000,
+    "take_home_monthly": 89000,
+    "epf_employee_monthly": 6000,
+    "epf_employee_is_estimate": true
+  },
+  "temporary_phase": {
+    "start": "2026-09-01",
+    "end": "2026-12-31",
+    "expenses": {
+      "family_support": 50000,
+      "medical": 20000,
+      "personal": 10000
+    }
+  },
+  "normal_phase": {
+    "start": "2027-01-01",
+    "expenses": {
+      "personal": 20000,
+      "household": 17500,
+      "family_support": 12500,
+      "gym_monthly": 1000
+    },
+    "expense_ranges_given": {
+      "household": [15000, 20000],
+      "family_support": [10000, 15000]
+    }
+  },
+  "goals": {
+    "bike": {"target_low": 300000, "target_high": 400000, "target": 350000, "years_from_now": 2},
+    "car": {"target": null, "note": "placeholder, awaiting user input"},
+    "marriage": {"target": null, "note": "placeholder, awaiting user input"},
+    "house": {
+      "bhk": "3+",
+      "type": "independent house / villa / plot+construction",
+      "location": "Chennai outskirts",
+      "target_age_low": 28,
+      "target_age_high": 30,
+      "fallback_age": 32,
+      "flood_risk_hard_filter": true,
+      "financing_base": "own income only"
+    }
+  },
+  "insurance": {"current_coverage": "employer/family", "assume_permanently_sufficient": false},
+  "credit": {"has_credit_card": false, "cibil_history": false},
+  "risk_profile": "moderate-growth",
+  "policy_overrides": {
+    "raise_split": {"save_pct": 0.70, "lifestyle_pct": 0.30},
+    "note": "70% of any incremental take-home goes to savings/investment buckets, 30% to lifestyle (personal expense), unless overridden per raise."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "_note": "External facts/estimates, separate from user data. Each has a 'type': FACT | ASSUMPTION | ESTIMATE | PROJECTION. Verify FACT/pending items before relying on them for real decisions -- see reports/research_notes.md.",
+  "instrument_returns_annual": {
+    "savings_account": {"value": 0.03, "type": "FACT"},
+    "fd": {"value": 0.07, "type": "ESTIMATE", "note": "typical 1-3yr bank FD, 2025-26"},
+    "liquid_debt_fund": {"value": 0.065, "type": "ESTIMATE"},
+    "ppf": {"value": 0.071, "type": "FACT_PENDING_VERIFY", "note": "govt-notified, revised quarterly"},
+    "epf": {"value": 0.0825, "type": "FACT_PENDING_VERIFY", "note": "EPFO-notified, revised annually"},
+    "nps": {"value": 0.09, "type": "PROJECTION", "note": "blended equity/debt, no guaranteed return"},
+    "index_fund_equity": {"value": 0.11, "type": "PROJECTION", "note": "historical long-term nominal CAGR often cited ~11-13%; NOT guaranteed, future may differ materially"},
+    "gold": {"value": 0.08, "type": "ESTIMATE"}
+  },
+  "home_loan": {
+    "stress_rates": [0.075, 0.08, 0.085, 0.09, 0.10],
+    "base_rate_assumption": 0.085,
+    "tenures_years": [15, 20, 25],
+    "preferred_emi_pct_of_takehome": 0.30,
+    "upper_limit_emi_pct_of_takehome": 0.35,
+    "typical_down_payment_pct_of_loanable_cost": 0.20,
+    "note": "Loanable cost = land+construction only; registration/legal/interiors/contingency assumed paid in cash, not financed."
+  },
+  "salary_growth_scenarios": {"conservative": 0.05, "base": 0.08, "strong": 0.10},
+  "house_price_appreciation_scenarios": {"low": 0.04, "base": 0.06, "high": 0.08},
+  "stress_test_appreciation_grid": [0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.10],
+  "stamp_duty_registration_pct_tn": {"value": 0.11, "type": "ESTIMATE_PENDING_VERIFY", "note": "Tamil Nadu: stamp duty ~7% + registration ~4% typical combined figure; verify current rates"},
+  "legal_brokerage_pct": {"value": 0.02, "type": "ASSUMPTION"},
+  "contingency_pct": {"value": 0.05, "type": "ASSUMPTION"},
+  "house_cost_scenarios": {
+    "low": {"plot_sqft": 1200, "land_rate_per_sqft": 1500, "construction_sqft": 1800, "construction_rate_per_sqft": 1800, "interiors_furniture": 500000},
+    "base": {"plot_sqft": 1200, "land_rate_per_sqft": 2500, "construction_sqft": 1800, "construction_rate_per_sqft": 2000, "interiors_furniture": 650000},
+    "high": {"plot_sqft": 1200, "land_rate_per_sqft": 4000, "construction_sqft": 1800, "construction_rate_per_sqft": 2400, "interiors_furniture": 800000},
+    "type": "ESTIMATE_PENDING_VERIFY",
+    "note": "Per-sqft land rates for Chennai outskirts corridors (Sriperumbudur/Oragadam/Thirumazhisai/Guduvanchery/Tambaram outskirts) are placeholders pending live research; construction rate is a generic TN standard-quality independent-house estimate."
+  },
+  "emergency_fund": {"min_months_essential": 6, "initial_target_floor": 400000},
+  "allocation_policy_default": {
+    "priority_order": ["emergency", "bike_reserved", "house_longterm_retirement_split"],
+    "post_emergency_split": {"house": 0.55, "long_term_wealth": 0.30, "retirement_voluntary": 0.15},
+    "note": "Default policy, user-overridable. Emergency fully prioritized until target met; bike gets a dynamically recomputed required-monthly reserve; remainder splits by weights shown. On bike completion, its reserved monthly amount redirects to house fund."
+  },
+  "tax_new_regime_fy2025_26": {
+    "type": "FACT_PENDING_VERIFY",
+    "note": "New tax regime is default in India from FY2023-24 onward; slabs revised in Budget 2025 with nil tax up to Rs 12L taxable income (plus standard deduction for salaried) via rebate u/s 87A. Verify exact slab breakpoints and rebate mechanics before relying on this for tax filing.",
+    "rebate_87a_taxable_income_limit": 1200000
+  }
+}
