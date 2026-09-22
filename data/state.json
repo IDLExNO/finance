@@ -26,5 +26,14 @@
     "deadline": "2028-09-22",
     "redirect_amount": 0.0
   },
-  "transactions": []
+  "transactions": [
+    {
+      "date": "2026-09-22",
+      "raw": "Spent Rs 500 on food",
+      "type": "expense_onetime",
+      "amount": 500.0,
+      "category": "one_time"
+    }
+  ],
+  "one_time_deduction": 500.0
 }
