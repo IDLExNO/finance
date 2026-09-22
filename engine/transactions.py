@@ -41,6 +41,12 @@ def _match_category(text: str) -> str | None:
     return None
 
 
+SHORTHAND_RE = re.compile(
+    r'^\s*(?:₹|rs\.?|inr)?\s*([\d,]+(?:\.\d+)?)\s*(crore|cr|lakh|lac|l|thousand|k)?\s*-\s*(.+)$',
+    re.IGNORECASE,
+)
+
+
 def parse_transaction(text: str) -> dict:
     """Returns a structured action dict. type is one of:
     expense_onetime, salary_set, expense_recurring_set, expense_recurring_delta,
@@ -48,6 +54,13 @@ def parse_transaction(text: str) -> dict:
     """
     t = text.strip()
     tl = t.lower()
+
+    # shorthand ledger format: "200 - food", "1500 - trip", "3.5k - groceries"
+    m = SHORTHAND_RE.match(t)
+    if m:
+        amount = parse_amount(f"{m.group(1)} {m.group(2) or ''}")
+        return {"type": "expense_onetime", "amount": amount, "desc": m.group(3).strip(), "raw": t}
+
     amount = parse_amount(t)
 
     if re.search(r'\bsalary\b.*\b(increas|now|is|changed|became|to)\b', tl) or re.search(r'take.?home.*(is|now|increas)', tl):
